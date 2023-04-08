@@ -1,0 +1,38 @@
+#!/bin/bash
+
+### Packages
+sudo cp sources.list /etc/apt/
+sudo apt update && sudo apt -y full-upgrade && sudo apt -y autoremove
+sudo apt -y install p7zip-full sudo git unzip vim lftp aptitude gnupg2 curl software-properties-common apt-transport-https build-essential lsd tree atool bat ueberzug catimg nnn micro fzf fd-find lowdown
+sudo apt -y install i3 xorg lightdm  numlockx nitrogen dex xcompmgr gnome-system-monitor gnome-themes-extra gnome-themes-extra-data gnome-icon-theme 
+sudo apt -y install kitty fish bpytop nemo cups
+sudo apt -y install pavucontrol pulseaudio alsa-utils ffmpeg
+sudo apt -y install fonts-hack fonts-hack-ttf fonts-hack-otf fonts-hack-web fonts-font-awesome 
+sudo apt -y install libx11-dev libxinerama-dev libxft-dev
+sudo apt update && sudo apt -y full-upgrade && sudo apt -y autoremove && sudo aptitude autoclean && sudo aptitude purge
+
+### Fonts
+cp -fr .fonts ~/
+cp -fr .w ~/
+cp -fr .config ~/
+cp -fr .X* ~/
+
+fc-cache -r
+
+### Shell
+# chsh -s /usr/bin/fish
+
+### Apps
+cd ~
+sudo apt -y install libreadline-dev
+git clone https://github.com/jarun/nnn
+#cd nnn
+# sudo make clean install O_NERD=1 O_CTX8=1
+# cd ~
+#git clone https://github.com/muff1nman/dmenu2
+#cd dmenu2
+#sudo make clean install
+#cd ~
+
+### Oh my fish
+#curl -L https://get.oh-my.fish | fish
